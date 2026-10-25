@@ -3,14 +3,73 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TTD Pilgrim Mitra</title>
+    <title>Fill TTD Darshan and Seva Booking Forms Faster - TTD Pilgrim Mitra</title>
     <meta
       name="description"
-      content="A free Chrome extension that saves pilgrim details on your own device, encrypted, and fills the official TTD booking form when you ask it to."
+      content="Free Chrome extension that puts your saved pilgrim details beside every box of TTD darshan, seva and accommodation booking forms at Tirumala, ready to paste. Your details stay encrypted on your own device."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" href="icon-128.png" />
-    <link rel="canonical" href="https://twintricks.github.io/ttd-pilgrim-mitra/" />
+    <link rel="canonical" href="https://twinntechies.github.io/ttd-pilgrim-mitra/" />
     <link rel="stylesheet" href="style.css" />
+
+    <!--
+      Absolute URLs from here down. Every other path on this site is relative, because it is served
+      from a folder on a shared github.io domain and has to survive moving; but a crawler fetching
+      og:image or a sitemap entry has no page to resolve a relative path against, and silently
+      ignores one.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TTD Pilgrim Mitra" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="Fill the TTD booking form in a few pastes" />
+    <meta
+      property="og:description"
+      content="Save your family's pilgrim details once, encrypted on your own device, and fill every row of the official TTD darshan, seva or accommodation form when you ask it to."
+    />
+    <meta property="og:url" content="https://twinntechies.github.io/ttd-pilgrim-mitra/" />
+    <meta
+      property="og:image"
+      content="https://twinntechies.github.io/ttd-pilgrim-mitra/screenshot-autofill.png"
+    />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta
+      property="og:image:alt"
+      content="TTD Pilgrim Mitra open beside a TTD booking page, showing a saved group of four pilgrims and an Autofill button."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TTD Pilgrim Mitra",
+        "alternateName": "TTD Pilgrim Mitra - Tirumala TTD Booking Assistant",
+        "description": "Helps fill the pilgrim details step of the official TTD darshan, seva and accommodation booking forms at Tirumala, by copying each saved detail for the user to paste, from details kept encrypted on the user's own device.",
+        "url": "https://twinntechies.github.io/ttd-pilgrim-mitra/",
+        "downloadUrl": "https://chromewebstore.google.com/detail/ttd-pilgrim-mitra/odinokaplbellnkmjhljllkefmdaaofk",
+        "installUrl": "https://chromewebstore.google.com/detail/ttd-pilgrim-mitra/odinokaplbellnkmjhljllkefmdaaofk",
+        "image": "https://twinntechies.github.io/ttd-pilgrim-mitra/icon-128.png",
+        "screenshot": "https://twinntechies.github.io/ttd-pilgrim-mitra/screenshot-autofill.png",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome",
+        "browserRequirements": "Requires Google Chrome on a desktop computer",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "TwinTricks",
+          "email": "twinntricks@gmail.com"
+        },
+        "privacyPolicy": "https://twinntechies.github.io/ttd-pilgrim-mitra/privacy/",
+        "disambiguatingDescription": "An independent third-party utility. Not affiliated with, operated by, or endorsed by Tirumala Tirupati Devasthanams."
+      }
+    </script>
   </head>
   <body>
     <header class="topbar">
@@ -28,11 +87,11 @@
 
     <main>
       <p class="eyebrow">Free · Private · On your device</p>
-      <h1>Save your family once. Fill the TTD form in one press.</h1>
+      <h1>Save your family once. Fill the TTD form in a few pastes.</h1>
       <p class="lede">
-        A Chrome extension that keeps your family's pilgrim details on your own computer, encrypted
-        behind a PIN, and types them into the official TTD booking form when you ask it to. Nothing
-        is sent anywhere.
+        A Chrome extension that keeps your family's pilgrim details encrypted on your own computer
+        and types them into the official TTD booking form when you ask it to. Nothing is sent
+        anywhere.
       </p>
 
       <div class="actions">
@@ -81,7 +140,7 @@
             </svg>
           </div>
           <h3>Fill the whole family</h3>
-          <p>Group the people who travel together and every row on the form fills in one press.</p>
+          <p>Group the people who travel together and every row on the form gets a button in each box.</p>
         </div>
         <div class="card">
           <div class="icon" aria-hidden="true">
@@ -109,15 +168,16 @@
         <h2>How your details are kept</h2>
         <ul class="marks yes">
           <li>
-            Encrypted on this device with your own PIN, using the browser's Web Crypto. The PIN
-            itself is never stored.
+            Encrypted on this device from the first save, using the browser's Web Crypto. There is
+            nothing to set up and no account to make.
           </li>
           <li>
-            A recovery key is shown once when you create the vault. It is the only way back in if
-            the PIN is forgotten.
+            Want this browser to ask before it shows anything? Turn a PIN on in Settings. You get a
+            recovery key once, and it is the only way back in if the PIN is forgotten.
           </li>
           <li>
-            Backups are encrypted files written only when you ask for one, to wherever you choose.
+            Backups are encrypted files written only when you ask for one, with a password you
+            choose for the file, to wherever you choose.
           </li>
           <li>
             Three permissions and one website. Nothing else is requested, and no other page is read.
@@ -138,7 +198,7 @@
       </div>
 
       <p class="footer">
-        Something not filling? <a href="support/">Support and common questions</a>.<br />
+        Something not working? <a href="support/">Support and common questions</a>.<br />
         An independent third-party utility. Not affiliated with, operated by, or endorsed by
         Tirumala Tirupati Devasthanams.
       </p>

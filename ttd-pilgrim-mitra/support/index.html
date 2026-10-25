@@ -3,14 +3,122 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Support · TTD Pilgrim Mitra</title>
+    <title>Support: when a TTD form field does not fill - TTD Pilgrim Mitra</title>
     <meta
       name="description"
-      content="What to do when a field does not fill, how to send a problem report that carries no personal details, and answers to the questions people ask most."
+      content="What to do when a TTD booking field does not fill, how to send a problem report that carries no personal details, and answers to the questions pilgrims ask most."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" href="../icon-128.png" />
-    <link rel="canonical" href="https://twintricks.github.io/ttd-pilgrim-mitra/support/" />
+    <link rel="canonical" href="https://twinntechies.github.io/ttd-pilgrim-mitra/support/" />
     <link rel="stylesheet" href="../style.css" />
+
+    <!-- Absolute, for the same reason as on the home page: a crawler has nothing to resolve a
+         relative path against. -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="TTD Pilgrim Mitra" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="TTD Pilgrim Mitra support" />
+    <meta
+      property="og:description"
+      content="What to do when a TTD booking field does not fill, how to send a problem report that carries no personal details, and answers to the questions pilgrims ask most."
+    />
+    <meta property="og:url" content="https://twinntechies.github.io/ttd-pilgrim-mitra/support/" />
+    <meta
+      property="og:image"
+      content="https://twinntechies.github.io/ttd-pilgrim-mitra/screenshot-autofill.png"
+    />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!--
+      Google only grants an FAQ rich result when the question and answer it reads here are both
+      visible on the page, so every entry below is a copy of one of the details/summary pairs in
+      "Questions people ask". `src/shared/site-seo.spec.ts` fails if a question is added there and
+      not here, which is the only way anybody would notice: a mismatch costs the rich result
+      silently, and the page still looks right.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "I forgot my PIN. Can you reset it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No one can, including us. The PIN never leaves your computer and is never stored, so there is nothing on our side to reset against. Use the recovery key shown once when you turned the PIN on to set a new one. Without that key the only way forward is a reset, which erases the saved pilgrims, because the data cannot be read without one of the two. An exported backup has a password of its own, so if you kept one you can reset and import it back."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will it book the ticket for me?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, and it will not try. It helps you enter the pilgrim details and stops. Choosing the date and slot, the OTP, the captcha, pressing Continue and paying are all yours. It does not improve your chances of getting a ticket either. You paste the same details you would have typed, faster and without a mistake."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "It says nothing is detected on the page.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It only offers itself on ttdevasthanams.ap.gov.in and tirupatibalaji.ap.gov.in, on the pilgrim details step of a booking. On the login page, the slot picker or the payment page there is nothing for it to fill, which is deliberate. If you are on the right step and it still sees nothing, reload the page. A tab that was already open when the extension was installed or updated needs one reload before the extension can reach it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work on my phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not yet. Chrome on Android and iOS does not run extensions at all, so this is a desktop tool. The pilgrim details you save do not sync to a phone either, since they never leave the computer they were saved on."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens to my data if I reinstall Chrome?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It goes. The saved pilgrims live in this Chrome profile, so removing the profile, the extension or Chrome itself takes them with it. Nothing is held on a server to restore from. Settings has an encrypted backup for exactly this. It writes a single .ttdpbackup file, protected by a password you choose for it, that you can keep wherever you keep important files and import later."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does it ask to read the TTD site?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because filling a form means reading it first: finding the name box, the ID box and the row each pilgrim belongs in. That access is limited to the one TTD origin. No other website is requested and no other page is read."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I have twenty relatives to enter. Is there a faster way?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Settings takes a CSV. It writes out a template to start from, and when you bring the filled sheet back it tells you which rows it could not read, by line number, instead of refusing the whole file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which photo IDs does it support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aadhaar and passport, the two the TTD dropdown accepts, each checked against its own shape so a typo is caught before the form sees it. The page shows which one to pick in the Photo ID Proof dropdown before you paste the number."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get rid of everything?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Settings has Delete all data, which asks you to confirm rather than doing it on a stray click. Removing the extension from Chrome also takes the vault with it. There is no copy anywhere else to chase down."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="topbar">
@@ -38,9 +146,7 @@
       <div class="card">
         <ol class="steps">
           <li>
-            <strong>Check the report it already gave you.</strong> After every run the extension
-            lists each field as verified, filled but unconfirmed, failed, or skipped. Only the
-            failures need your attention.
+            <strong>Look at the boxes on the page.</strong> Each box turns green once TTD holds the saved value, and the banner says which box comes next. Only a box that stays without a green check needs your attention.
           </li>
           <li>
             <strong>Press Retry failed.</strong> A field that was still loading when the run reached
@@ -93,12 +199,13 @@
             <p>
               No one can, including us. The PIN never leaves your computer and is never stored, so
               there is nothing on our side to reset against. Use the recovery key shown once when
-              you created the vault to set a new PIN.
+              you turned the PIN on to set a new one.
             </p>
             <p>
               Without that key the only way forward is a reset, which erases the saved pilgrims,
-              because the data cannot be read without one of the two. This is the cost of the
-              details being genuinely yours.
+              because the data cannot be read without one of the two. An exported backup has a
+              password of its own, so if you kept one you can reset and import it back. This is the
+              cost of the details being genuinely yours.
             </p>
           </div>
         </details>
@@ -106,10 +213,9 @@
           <summary>Will it book the ticket for me?</summary>
           <div class="answer">
             <p>
-              No, and it will not try. It fills the pilgrim details and stops. Choosing the date and
+              No, and it will not try. It helps you enter the pilgrim details and stops. Choosing the date and
               slot, the OTP, the captcha, pressing Continue and paying are all yours. It does not
-              improve your chances of getting a ticket either. It types the same details you would
-              have typed, faster and without a mistake.
+              improve your chances of getting a ticket either. You paste the same details you would have typed, faster and without a mistake.
             </p>
           </div>
         </details>
@@ -148,8 +254,8 @@
             </p>
             <p>
               Settings has an encrypted backup for exactly this. It writes a single
-              <strong>.ttdpbackup</strong> file, protected by your PIN, that you can keep wherever
-              you keep important files and import later.
+              <strong>.ttdpbackup</strong> file, protected by a password you choose for it, that you
+              can keep wherever you keep important files and import later.
             </p>
           </div>
         </details>
@@ -182,8 +288,7 @@
           <div class="answer">
             <p>
               Aadhaar and passport, the two the TTD dropdown accepts, each checked against its own
-              shape so a typo is caught before the form sees it. Autofill sets the Photo ID Proof
-              dropdown to whichever one you saved before typing the number.
+              shape so a typo is caught before the form sees it. The page shows which one to pick in the Photo ID Proof dropdown before you paste the number.
             </p>
           </div>
         </details>

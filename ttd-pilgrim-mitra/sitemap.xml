@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Served at https://twinntechies.github.io/ttd-pilgrim-mitra/sitemap.xml, so it may only list URLs
+  at or below that folder. It has to be submitted in Search Console by hand: the robots.txt that
+  would otherwise announce it can only live at the root of twinntechies.github.io, which belongs to
+  the site repository and not to this one.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://twinntechies.github.io/ttd-pilgrim-mitra/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://twinntechies.github.io/ttd-pilgrim-mitra/support/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://twinntechies.github.io/ttd-pilgrim-mitra/privacy/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

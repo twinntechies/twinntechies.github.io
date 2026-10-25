@@ -3,14 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Privacy policy · TTD Pilgrim Mitra</title>
+    <title>Privacy policy - TTD Pilgrim Mitra</title>
     <meta
       name="description"
       content="How TTD Pilgrim Mitra handles pilgrim details: stored on your own device, encrypted, never sold."
     />
+    <meta name="robots" content="index, follow" />
     <link rel="icon" href="../icon-128.png" />
-    <link rel="canonical" href="https://twintricks.github.io/ttd-pilgrim-mitra/privacy/" />
+    <link rel="canonical" href="https://twinntechies.github.io/ttd-pilgrim-mitra/privacy/" />
     <link rel="stylesheet" href="../style.css" />
+
+    <!-- Absolute, unlike every other path here: a crawler has no page to resolve a relative one
+         against. This is also the URL the store listing points a reviewer at, so it has to be the
+         one constant rather than a copy. -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="TTD Pilgrim Mitra" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="Privacy policy - TTD Pilgrim Mitra" />
+    <meta
+      property="og:description"
+      content="How TTD Pilgrim Mitra handles pilgrim details: stored on your own device, encrypted, never sold."
+    />
+    <meta property="og:url" content="https://twinntechies.github.io/ttd-pilgrim-mitra/privacy/" />
+    <meta name="twitter:card" content="summary" />
   </head>
   <body>
     <header class="topbar">
@@ -33,8 +48,13 @@
 
       <div class="card policy">
         <section>
+          <h2>What is saved</h2>
+          <p>Only what you type in: each pilgrim's name, age, gender, photo ID type and photo ID number, the mobile, email, city, state, country and pincode a TTD form asks for, and a gotram where a seva needs one. Alongside those, the groups you arrange people into, your own settings, and any field mapping you make by pointing at a box on the page. Nothing else is taken from your computer, and nothing is read from any page you visit.</p>
+        </section>
+
+        <section>
           <h2>Local storage and encryption</h2>
-          <p>Pilgrim profiles, groups, settings, and field mappings are stored in this Chrome profile. Sensitive profile data is encrypted at rest with browser Web Crypto. Your PIN is not stored. A recovery key, shown once, is the only way we can help you set a new PIN.</p>
+          <p>Pilgrim profiles, groups, settings, and field mappings are stored in this Chrome profile. Storage is local to this device on purpose, and deliberately not Chrome's sync storage, which would carry ID numbers through your browser vendor's servers to every machine you are signed in on. Sensitive profile data is always encrypted at rest with browser Web Crypto. By default the key to it is held on this device, so the extension opens without asking for anything. You can turn on a PIN in Settings, which moves that key under the PIN and removes the copy held on the device. Your PIN is not stored. A recovery key, shown once, is the only way we can help you set a new PIN.</p>
         </section>
 
         <section>
@@ -44,12 +64,12 @@
 
         <section>
           <h2>Data sent to the official TTD page</h2>
-          <p>Only after you request autofill, selected details are decrypted and provided to the supported official TTD booking page. Those pages are ttdevasthanams.ap.gov.in and tirupatibalaji.ap.gov.in, both run by TTD, and their subdomains. Information entered there is then governed by TTD's website and privacy practices.</p>
+          <p>Only when you ask, selected details are decrypted and shown beside the boxes of the supported official TTD booking page. Each one you press is copied to your clipboard, one at a time, for you to paste in yourself; the extension does not write into the page. While a detail is on the clipboard, other apps on this computer that read the clipboard can see it, and it stays there until you copy something else. Those pages are ttdevasthanams.ap.gov.in and tirupatibalaji.ap.gov.in, both run by TTD, and their subdomains. Information entered there is then governed by TTD's website and privacy practices.</p>
         </section>
 
         <section>
           <h2>Backups and retention</h2>
-          <p>Encrypted backup files are created only when you request an export. You control where those files are stored. Local information remains until you delete it, clear extension storage, or uninstall the extension.</p>
+          <p>Encrypted backup files are created only when you request an export, and are encrypted with a password you choose for the file itself rather than with anything held on this device. You control where those files are stored, and we cannot open one. Local information remains until you delete it, clear extension storage, or uninstall the extension.</p>
         </section>
 
         <section>
@@ -63,18 +83,33 @@
         </section>
 
         <section>
+          <h2>No network requests, and no analytics</h2>
+          <p>This extension makes no network requests at all. There is no fetch, no socket, no remote address and no cookie anywhere in the package, and its content security policy refuses to load anything from outside it, so there is no route by which a saved detail could leave even by accident. The pages published for this extension, including the one you may be reading this on, carry no analytics and no tracking either.</p>
+        </section>
+
+        <section>
+          <h2>What it will not do</h2>
+          <p>It does not bypass, weaken, or interfere with any queue, CAPTCHA, login, OTP, rate limit, or other protection TTD puts in place, and it is not built to. It does not choose your date, slot, or ticket count, it does not press Continue, and it never touches payment: card, UPI, and banking details are never seen, typed, or stored. It shows the details you already saved and copies each one for you to paste, and stops.</p>
+        </section>
+
+        <section>
+          <h2>Children</h2>
+          <p>This is a tool for an adult making a booking, and is not directed at children or meant to be used by one. A family booking often includes a child, and a child's details are held exactly as an adult's are: encrypted on this device, sent nowhere, and gone when you delete them. There is no account and no contact with anyone using the extension, so we neither ask for nor could determine the age of whoever is using it.</p>
+        </section>
+
+        <section>
           <h2>Limited use of your information</h2>
-          <p>Our collection and use of pilgrim information adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements. Saved details are used for one thing only: filling the official TTD booking form when you ask for it, and telling you what was filled. They are never transferred to us or to anyone else, never used for advertising, credit, or lending decisions, and never read by a person. There is no server for them to be sent to.</p>
+          <p>Our collection and use of pilgrim information adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements. Saved details are used for one thing only: helping you enter them into the official TTD booking form when you ask, and showing which boxes hold them. They are never transferred to us or to anyone else, never used for advertising, credit, or lending decisions, and never read by a person. There is no server for them to be sent to.</p>
         </section>
 
         <section>
           <h2>Permissions</h2>
-          <p>Three permissions, and no more. Storage holds local extension data. Active-tab access lets the popup see whether the tab in front of you is a supported page, and talk to it when you ask for a fill. Scripting re-inserts this extension's own content script into a TTD tab that was already open when the extension was installed or updated, which Chrome does not do by itself; nothing else is ever injected, and never into another site. Access to the two official TTD hosts is used only for page detection and the autofill you asked for.</p>
+          <p>Three permissions, and no more. Storage holds local extension data. Active-tab access lets the popup see whether the tab in front of you is a supported page, and talk to it when you ask for your details there. Scripting re-inserts this extension's own content script into a TTD tab that was already open when the extension was installed or updated, which Chrome does not do by itself; nothing else is ever injected, and never into another site. Access to the two official TTD hosts is used only for page detection and for showing your details beside the form when you ask.</p>
         </section>
 
         <section>
           <h2>Security limits</h2>
-          <p>Encryption protects stored data while the vault is locked. It cannot protect an unlocked device, a compromised operating system, someone who knows your PIN, or information after it is entered into the TTD website.</p>
+          <p>Encryption keeps the saved details out of anything that reads this browser profile as files, including a profile copied, synced, or backed up elsewhere. Without a PIN the key sits on this device, so it does not protect against someone using this computer; turning a PIN on in Settings is what adds that. Encryption cannot protect a compromised operating system, someone who knows your PIN, or information after it is entered into the TTD website.</p>
         </section>
 
         <section>
@@ -89,7 +124,7 @@
       </div>
 
       <p class="effective">
-        Policy effective September 23, 2026. Questions:
+        Policy effective October 16, 2026. Questions:
         <a href="mailto:twinntricks@gmail.com">twinntricks@gmail.com</a>
       </p>
     </main>
